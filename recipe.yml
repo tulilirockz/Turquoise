@@ -60,7 +60,7 @@ rpm:
     - iwd
     - podman-plugins 
     - podman-tui
-    - iotop
+    - cockpit
     - cockpit-bridge
     - cockpit-system
     - cockpit-networkmanager
