@@ -1,5 +1,4 @@
 #!/bin/sh
-
 git fetch upstream template
 git checkout template
 git merge --ff-only upstream/template
