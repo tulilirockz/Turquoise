@@ -1,4 +1,4 @@
-# Starting point
+# lavander
 
 [![build-ublue](https://github.com/tulilirockz/lavander/actions/workflows/build.yml/badge.svg)](https://github.com/tulilirockz/lavander/actions/workflows/build.yml)
 
