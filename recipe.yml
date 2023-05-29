@@ -20,7 +20,8 @@ rpm:
     - waydroid
     - podman-docker
     - iwd
-    - podman-plugins 
+    - podman-plugins
+    - system76-scheduler
     - podman-tui
     - tmux
      
