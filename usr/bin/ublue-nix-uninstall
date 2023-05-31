@@ -1,0 +1,41 @@
+#!/bin/bash
+VERBOSITY="${VERBOSITY:-1}"
+[ "$VERBOSITY" == "1" ] && set -x
+set -uo pipefail
+
+log() {echo '->' $@ >&2 ;}
+
+log Removing nix configuration from "\$HOME"
+log To finish removing everything, make sure to remove the '. "$HOME/.nix-profile/etc/profile.d/nix.sh"' line in your ~/.profile or ~/.bash_profile
+
+rm -rf $HOME/{.nix-channels,.nix-defexpr,.nix-profile,.config/nixpkgs}
+
+log Deleting nix system users
+for i in $(seq 1 32); do
+  sudo userdel nixbld$i
+done
+sudo groupdel nixbld
+
+log Removing nix systemd services
+sudo systemctl disable --now nix-daemon.service nix-daemon.socket nix.mount mkdir-rootfs@.service
+sudo systemctl daemon-reload
+
+sudo rm /etc/systemd/system/mkdir-rootfs@.service
+sudo rm /etc/systemd/system/nix.mount 
+sudo rm -f /etc/systemd/system/nix-daemon.{service,socket}
+sudo systemctl daemon-reload
+
+log Removing remaining nix system configuration
+sudo rm -f /etc/profile.d/nix-app-icons.sh
+sudo rm -rf /etc/systemd/system/nix-daemon.service.d/
+sudo rm /etc/nix/nix.conf
+sudo rm -rf /etc/nix /etc/profile.d/nix.sh /etc/tmpfiles.d/nix-daemon.conf /nix ~root/.nix-channels ~root/.nix-defexpr ~root/.nix-profile
+sudo cp -f /etc/bashrc.backup-before-nix /etc/bashrc
+
+log Removing /var/lib/nix
+sudo restorecon -RF /var/lib/nix
+sudo rm -rf /var/lib/nix 
+
+log Make sure to remove residual configurations from the following files: /etc/bash.bashrc /etc/bashrc /etc/profile /etc/zsh/zshrc /etc/zshrc
+
+log You may now reboot your system to confirm these changes with "systemctl reboot"
