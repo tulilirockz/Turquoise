@@ -24,7 +24,6 @@ rpm:
     - system76-scheduler
     - podman-tui
     - tmux
-    - code    
  
   remove:
     - firefox
