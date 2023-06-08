@@ -1,4 +1,3 @@
-
 name: turquoise
 base-image: ghcr.io/ublue-os/kinoite-main
 fedora-version: 38
@@ -7,7 +6,6 @@ description: A customization over ublue starting point with Positivo touchscreen
 scripts:
   pre:
     - autorun.sh
-  
   post:
     - autorun.sh
   
@@ -15,15 +13,16 @@ rpm:
   repos:
  
   install:
-    - python3-pip
     - libadwaita
     - waydroid
     - podman-docker
     - iwd
     - podman-plugins
-    - system76-scheduler
     - podman-tui
     - tmux
+    - cockpit
+    - cockpit-podman
+    - tailscale
  
   remove:
     - firefox
