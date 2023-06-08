@@ -13,7 +13,6 @@ rpm:
   repos:
  
   install:
-    - libadwaita
     - waydroid
     - podman-docker
     - iwd
