@@ -9,7 +9,8 @@ COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 COPY scripts /tmp/scripts
 
-RUN chmod +x /tmp/scripts/build.sh && \
+RUN cp -r /usr/etc/yum.repos.d /etc && \
+        chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/* && \
         ostree container commit
