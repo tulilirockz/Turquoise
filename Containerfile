@@ -12,5 +12,6 @@ COPY scripts /tmp/scripts
 RUN cp -r /usr/etc/yum.repos.d /etc && \
         chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
+        pip install --prefix=/usr yafti && \
         rm -rf /tmp/* /var/* && \
         ostree container commit
