@@ -15,6 +15,7 @@ rpm:
   install:
     - python3-pip
     - libadwaita
+    - zenity
     - waydroid
     - podman-docker
     - iwd
