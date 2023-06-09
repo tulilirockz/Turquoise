@@ -13,6 +13,7 @@ rpm:
   repos:
  
   install:
+    - python3-pip
     - waydroid
     - podman-docker
     - iwd
