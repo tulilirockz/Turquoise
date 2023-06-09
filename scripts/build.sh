@@ -22,17 +22,6 @@ YAFTI_ENABLED="$(get_yaml_string '.firstboot.yafti')"
 # Welcome.
 echo "Building custom Fedora ${FEDORA_VERSION} from image: \"${BASE_IMAGE}\"."
 
-# Add custom repos.
-get_yaml_array repos '.rpm.repos[]'
-if [[ ${#repos[@]} -gt 0 ]]; then
-    echo "-- Adding repos defined in recipe.yml --"
-    for repo in "${repos[@]}"; do
-        repo="${repo//%FEDORA_VERSION%/${FEDORA_VERSION}}"
-        wget "${repo}" -P "/etc/yum.repos.d/"
-    done
-    echo "---"
-fi
-
 # Ensure that all script files are executable.
 find /tmp/scripts -type f -exec chmod +x {} \;
 

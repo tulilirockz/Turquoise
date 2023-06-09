@@ -10,9 +10,8 @@ scripts:
     - autorun.sh
   
 rpm:
-  repos:
- 
   install:
+    - howdy
     - python3-pip
     - libadwaita
     - zenity
