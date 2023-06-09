@@ -9,8 +9,7 @@ COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 COPY scripts /tmp/scripts
 
-RUN wget https://copr.fedorainfracloud.org/coprs/principis/howdy/repo/fedora-$(rpm -E %fedora)/principis-howdy-fedora-$(rpm -E %fedora).repo -O /usr/etc/yum.repos.d/_copr_principis-howdy.repo && \
-        cp -r /usr/etc/yum.repos.d /etc && \
+RUN cp -r /usr/etc/yum.repos.d /etc && \
         chmod +x /tmp/scripts/build.sh
 
 RUN /tmp/scripts/build.sh && \

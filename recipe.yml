@@ -11,7 +11,6 @@ scripts:
   
 rpm:
   install:
-    - howdy
     - python3-pip
     - libadwaita
     - zenity
