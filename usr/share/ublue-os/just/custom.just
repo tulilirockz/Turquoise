@@ -1,3 +1,6 @@
+skel-to-home:
+  rsync -avh /etc/skel "$HOME"
+
 setup-flatpaks:
   #!/usr/bin/env bash
   echo 'Installing flatpaks from the ublue recipe ...'
@@ -9,6 +12,7 @@ setup-flatpaks:
 
 setup-gaming:
   echo 'Setting up gaming experience ... lock and load.'
+  distrobox create -i ghcr.io/ublue-os/bazzite-arch gamebox
   flatpak install -y --user \\
   com.discordapp.Discord \\
   com.feaneron.Boatswain \\
@@ -23,10 +27,17 @@ setup-gaming:
   com.valvesoftware.Steam \\
   com.valvesoftware.Steam.Utility.gamescope \\
   net.davidotek.pupgui2
-  flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications 
-  flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam 
-  flatpak override --user --env=MANGOHUD=1 com.heroicgameslauncher.hgl 
+  flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications
+  flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam
+  flatpak override --user --env=MANGOHUD=1 com.heroicgameslauncher.hgl
 
-nix-me-up:
-  echo 'Setting phasers to kill. Installing nix.'
-  /usr/bin/ublue-nix-install
+emudeck:
+  wget -O "$HOME/Desktop/emudeck.desktop" "https://www.emudeck.com/EmuDeck.desktop"
+  chmod +x "$HOME/Desktop/emudeck.desktop"
+  kioclient exec "$HOME/Desktop/emudeck.desktop"
+
+deckyloader:
+  curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_release.sh | sh
+
+cool-packages-for-gamebox:
+    distrobox enter gamebox -- pacman -S vkBasalt zenity mangohud gamemode gamescope
