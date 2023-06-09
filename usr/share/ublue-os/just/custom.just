@@ -40,7 +40,7 @@ deckyloader:
   curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_release.sh | sh
 
 cool-packages-for-gamebox:
-    distrobox enter gamebox -- pacman -S vkBasalt zenity mangohud gamemode gamescope
+    distrobox enter gamebox -- pacman -S gamemode gamescope fuse2
 
 steam-autostart:
   cp /usr/share/ublue-os/turquoise/com.valvesoftware.Steam.desktop ~/.config/autostart/
