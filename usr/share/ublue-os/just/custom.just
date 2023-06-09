@@ -41,3 +41,6 @@ deckyloader:
 
 cool-packages-for-gamebox:
     distrobox enter gamebox -- pacman -S vkBasalt zenity mangohud gamemode gamescope
+
+steam-autostart:
+  cp /usr/share/ublue-os/turquoise/com.valvesoftware.Steam.desktop ~/.config/autostart/
