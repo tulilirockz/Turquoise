@@ -23,6 +23,7 @@ rpm:
     - cockpit
     - cockpit-podman
     - tailscale
+    - papirus-icon-theme
  
   remove:
     - firefox
