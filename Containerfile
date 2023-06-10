@@ -2,7 +2,7 @@ ARG FEDORA_MAJOR_VERSION=38
 ARG BASE_IMAGE_URL=ghcr.io/ublue-os/kinoite-main
 
 FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
-ARG RECIPE
+ARG RECIPE=./recipe.yml
 
 COPY usr /usr
 COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
