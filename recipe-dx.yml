@@ -1,5 +1,5 @@
 name: turquoise-dx
-base-image: ghcr.io/ublue-os/lxqt-main
+base-image: ghcr.io/ublue-os/vauxite-main
 fedora-version: 38
 description: A customization over ublue starting point with Positivo touchscreen drivers for my personal usage 
 
