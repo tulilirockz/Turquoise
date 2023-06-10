@@ -14,7 +14,6 @@ rpm:
     - python3-pip
     - libadwaita
     - zenity
-    - waydroid
     - podman-docker
     - iwd
     - podman-plugins
@@ -24,6 +23,8 @@ rpm:
     - cockpit-podman
     - tailscale
     - papirus-icon-theme
+    - plank
+    - xfce4-whiskermenu-plugin
  
   remove:
     - firefox
