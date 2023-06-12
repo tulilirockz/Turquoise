@@ -27,6 +27,8 @@ on:
   pull_request:
     paths-ignore:
       - "**.md"
+      - "**-mum.*"
+      - "**-dx*"
       - "**.txt"
   # Build when manually triggering this workflow for a branch. This allows you
   # to build any branch, even if it's not listed in the automated triggers above.

@@ -1,4 +1,4 @@
-name: build-ublue-dx
+name: build-ublue-mum
 on:
   # Build *every* branch at 10:20pm UTC every day (1 hr delay after "nvidia" builds),
   # regardless of the branch names. (Not just "live, template and main" branches.)
@@ -16,7 +16,7 @@ on:
     paths-ignore:
       - "**.md"
       - "**.txt"
-      - "**-mum*"
+      - "**-dx*"
   # Build pull requests whenever they are opened or updated, to make sure they
   # work. The build won't be deployed, since we filter out PRs in the deployment
   # stage. Note that submitted PRs run the workflow of the *fork's* own primary
@@ -28,6 +28,7 @@ on:
   pull_request:
     paths-ignore:
       - "**.md"
+      - "**-dx*"
       - "**.txt"
   # Build when manually triggering this workflow for a branch. This allows you
   # to build any branch, even if it's not listed in the automated triggers above.
@@ -51,7 +52,7 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - recipe-dx.yml
+          - recipe.yml
 
     steps:
       # Checkout push-to-registry action GitHub repository
