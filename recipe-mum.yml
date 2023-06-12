@@ -17,9 +17,6 @@ rpm:
     - cockpit
     - cockpit-podman
     - tailscale
- 
-  remove:
-    -
 
 firstboot:
   yafti: false
