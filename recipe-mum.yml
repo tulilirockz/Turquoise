@@ -19,9 +19,7 @@ rpm:
     - tailscale
  
   remove:
-    - firefox
-    - firefox-langpacks
-    - wpa_supplicant
+    -
 
 firstboot:
   yafti: false
