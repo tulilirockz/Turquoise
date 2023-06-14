@@ -23,6 +23,7 @@ rpm:
     - cockpit
     - cockpit-podman
     - tailscale
+    - gnome-tweaks
  
   remove:
     - wpa_supplicant
