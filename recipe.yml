@@ -1,5 +1,5 @@
 name: turquoise
-base-image: ghcr.io/ublue-os/kinoite-main
+base-image: ghcr.io/ublue-os/beyond
 fedora-version: 38
 description: A customization over ublue starting point with Positivo touchscreen drivers for my personal usage 
 
