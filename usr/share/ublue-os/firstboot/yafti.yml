@@ -201,7 +201,7 @@ screens:
       title: "All done!"
       icon: "/path/to/icon"
       links:
-        - "Check out this OS source code"
+        - "Check out this OS source code":
           run: /usr/bin/xdg-open https://github.com/tulilirockz/Turquoise
         - "Install More Applications":
             run: /usr/bin/gnome-software
