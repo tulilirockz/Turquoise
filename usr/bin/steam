@@ -4,7 +4,7 @@
 if [ ! -f /run/.containerenv ] && [ ! -f /.dockerenv ]; then
 	if ! podman container exists gamebox ; then
 		set -euo pipefail
-		distrobox create -i ghcr.io/ublue-os/bazzite-arch gamebox
+		distrobox create -i ghcr.io/tulilirockz/gamebox gamebox
 		set +euo pipefail
 	fi
 
