@@ -11,6 +11,7 @@ scripts:
   
 rpm:
   install:
+    - gnome-kiosk-session
     - python3-pip
     - libadwaita
     - zenity
