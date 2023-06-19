@@ -24,8 +24,6 @@ rpm:
     - cockpit-podman
     - tailscale
     - gnome-tweaks
-    - cage
-    - remmina-gnome-session
     - gnome-kiosk
     - gnome-kiosk-script-session
  
