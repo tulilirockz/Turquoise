@@ -27,6 +27,7 @@ rpm:
     - cage
     - remmina-gnome-session
     - gnome-kiosk
+    - gnome-kiosk-script-session
  
   remove:
     - wpa_supplicant
