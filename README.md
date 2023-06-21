@@ -1,14 +1,10 @@
 # Turquoise
 
 [![build-ublue](https://github.com/tulilirockz/turquoise/actions/workflows/build.yml/badge.svg)](https://github.com/tulilirockz/turquoise/actions/workflows/build.yml)
-[![build-ublue](https://github.com/tulilirockz/turquoise/actions/workflows/build-mum.yml/badge.svg)](https://github.com/tulilirockz/turquoise/actions/workflows/build-mum.yml)
-[![build-ublue](https://github.com/tulilirockz/turquoise/actions/workflows/build-dx.yml/badge.svg)](https://github.com/tulilirockz/turquoise/actions/workflows/build-dx.yml)
 
-"Turquoise" is a collection of images for every computer I wish to install linux on, including my laptop, my mom's computer, and my gaming computer. Every image has it's customizations and base-images.
+"Turquoise" is an image that is meant to have reasonable defaults for development and regular desktop usage for me and anyone else that is going to use this image
 
-The "dx" image also includes Positivo C4128B-1 drivers! 
-
-Use the following command to build your own: `podman run -v "$(pwd)":/host:z -it ghcr.io/einohr/create-ublue-image` (this is community mantained, so use it at your own risk!)
+This was firstly created using `podman run -v "$(pwd)":/host:z -it ghcr.io/einohr/create-ublue-image` (this is community mantained, so use it at your own risk!), now I am using a slightly different system but it is pretty much the same
 
 
 ## Installation

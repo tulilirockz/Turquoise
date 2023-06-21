@@ -1,0 +1,21 @@
+{
+  "yafti": true,
+  "remove": [
+    "wpa_supplicant"
+  ],
+  "install": [
+    "iwd",
+    "python3-pip",
+    "libadwaita",
+    "waydroid",
+    "tmux",
+    "cockpit",
+    "cockpit-podman",
+    "tailscale",
+    "gnome-tweaks",
+    "gnome-kiosk",
+    "gnome-kiosk-script-session",
+    "gnome-shell-extension-caffeine",
+    "gnome-shell-extension-appindicator"
+  ]
+}

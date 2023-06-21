@@ -11,12 +11,8 @@ on:
   push:
     branches:
       - live
-      - template
-      - main
     paths-ignore:
       - "**.md"
-      - "**-mum*"
-      - "**-dx*"
       - "**.txt"
   # Build pull requests whenever they are opened or updated, to make sure they
   # work. The build won't be deployed, since we filter out PRs in the deployment
@@ -29,8 +25,6 @@ on:
   pull_request:
     paths-ignore:
       - "**.md"
-      - "**-mum*"
-      - "**-dx*"
       - "**.txt"
   # Build when manually triggering this workflow for a branch. This allows you
   # to build any branch, even if it's not listed in the automated triggers above.
@@ -53,23 +47,23 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        recipe:
-          - recipe.yml
-
+        metadata:
+          - meta/metadata.json
+        packages:
+          - meta/packages.json
+        scripts:
+          - meta/scripts.json
     steps:
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v3
 
-      - name: Add yq for reading recipe.yml
-        uses: mikefarah/yq@v4.34.1
-
       - name: Gather image data from recipe
         run: |
-          echo "IMAGE_NAME=$(yq '.name' ./${{ matrix.recipe }})" >> $GITHUB_ENV
-          echo "IMAGE_DESCRIPTION=$(yq '.description' ./${{ matrix.recipe }})" >> $GITHUB_ENV
-          echo "FEDORA_MAJOR_VERSION=$(yq '.fedora-version' ./${{ matrix.recipe }})" >> $GITHUB_ENV
-          echo "BASE_IMAGE_URL=$(yq '.base-image' ./${{ matrix.recipe }})" >> $GITHUB_ENV
+          echo "IMAGE_NAME=$(jq '.name' ./${{ matrix.metadata }})" >> $GITHUB_ENV
+          echo "IMAGE_DESCRIPTION=$(jq '.description' ./${{ matrix.metadata }})" >> $GITHUB_ENV
+          echo "FEDORA_MAJOR_VERSION=$(jq '.fedora-version' ./${{ matrix.metadata }})" >> $GITHUB_ENV
+          echo "BASE_IMAGE_URL=$(jq '.base-image' ./${{ matrix.metadata }})" >> $GITHUB_ENV
 
       - name: Generate tags
         id: generate-tags
@@ -122,10 +116,9 @@ jobs:
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
             org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
             org.opencontainers.image.description=${{ env.IMAGE_DESCRIPTION }}
-            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/ublue-os/startingpoint/main/README.md
+            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/tulilirockz/turquoise/main/README.md
             io.artifacthub.package.logo-url=https://avatars.githubusercontent.com/u/120078124?s=200&v=4
 
-      # Build image using Buildah action
       - name: Build Image
         id: build_image
         uses: redhat-actions/buildah-build@v2
@@ -138,7 +131,6 @@ jobs:
           build-args: |
             FEDORA_MAJOR_VERSION=${{ env.FEDORA_MAJOR_VERSION }}
             BASE_IMAGE_URL=${{ env.BASE_IMAGE_URL }}
-            RECIPE=${{ matrix.recipe }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
 

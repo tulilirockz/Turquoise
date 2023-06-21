@@ -1,0 +1,8 @@
+{
+  "pre": [
+    "autorun.sh"
+  ],
+  "post": [
+    "autorun.sh"
+  ]
+}
