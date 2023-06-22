@@ -1,2 +1,0 @@
-#!/bin/bash
-nix-portable nix run nixpkgs#nix -- $@
