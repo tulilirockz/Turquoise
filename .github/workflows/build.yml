@@ -56,7 +56,7 @@ jobs:
 
       - name: Gather image data from recipe
         run: |
-          echo "IMAGE_NAME=$(jq '.name' ./${{ matrix.metadata }})" >> $GITHUB_ENV
+          echo "IMAGE_NAME=$(jq '.name' ./${{ matrix.metadata }} | sed 's/\"//g')" >> $GITHUB_ENV
           echo "IMAGE_DESCRIPTION=$(jq '.description' ./${{ matrix.metadata }})" >> $GITHUB_ENV
           echo "FEDORA_MAJOR_VERSION=$(jq '."fedora-version"' ./${{ matrix.metadata }})" >> $GITHUB_ENV
           echo "BASE_IMAGE_URL=$(jq '."base-image"' ./${{ matrix.metadata }})" >> $GITHUB_ENV
