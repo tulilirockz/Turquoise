@@ -8,7 +8,7 @@ get_json_array() {
     mapfile -t "${1}" < <(jq "${2}" "${META_FOLDER}/${3}")
 }
 get_json_string() {
-    jq "${1}" "${META_FOLDER}/${2}"
+    jq -r "${1}" "${META_FOLDER}/${2}"
 }
 FEDORA_VERSION="$(cat /usr/lib/os-release | grep '^VERSION_ID=' | head -1 | sed 's,^VERSION_ID=,,')"
 BASE_IMAGE="$(get_json_string '."base-image"' 'metadata.json')"
