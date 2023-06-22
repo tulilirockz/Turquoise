@@ -1,2 +1,6 @@
+#!/bin/sh
 sleep 1.0
-flatpak run com.valvesoftware.Steam -tenfoot -steamos -fulldesktopres
+if ! flatpak list --app --columns=application | tail -n +1 | grep com.valvesoftware.Steam ; then
+  flatpak install com.valvesoftware.Steam -y
+fi
+flatpak run com.valvesoftware.Steam -tenfoot -steamos -fulldesktopres -gamepadui
