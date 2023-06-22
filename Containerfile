@@ -5,10 +5,11 @@ FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 ARG META_FOLDER=./meta
 
 COPY usr /usr
-COPY ${META_FOLDER} /usr/share/ublue-os/meta
+COPY ${META_FOLDER} /usr/share/ublue-os/meta/
 COPY scripts /tmp/scripts
 
-RUN cp -r /usr/etc/yum.repos.d /etc && \
+RUN rm /usr/share/ublue-os/meta/.gitkeep && \
+        cp -r /usr/etc/yum.repos.d /etc && \
         chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/* && \
