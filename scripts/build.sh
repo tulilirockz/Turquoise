@@ -2,9 +2,7 @@
 set -oue pipefail
 
 META_FOLDER="/usr/share/ublue-os/meta"
-ls -lah /usr/share/ublue-os
-mkdir -p "${META_FOLDER}"
-cp -r /tmp/meta "${META_FOLDER}"
+ls -lah /usr/share/ublue-os/meta
 
 get_json_array() {
     mapfile -t "${1}" < <(jq "${2}" "${META_FOLDER}/${3}")
