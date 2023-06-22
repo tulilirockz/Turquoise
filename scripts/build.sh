@@ -5,7 +5,7 @@ META_FOLDER="/usr/share/ublue-os/meta"
 ls -lah /usr/share/ublue-os/meta
 
 get_json_array() {
-    mapfile -t "${1}" < <(jq "${2}" "${META_FOLDER}/${3}")
+    mapfile -t "${1}" < <(jq -r "${2}" "${META_FOLDER}/${3}")
 }
 get_json_string() {
     jq -r "${1}" "${META_FOLDER}/${2}"
