@@ -9,7 +9,7 @@ get_json_string() {
     jq "${1}" "${META_FOLDER}/${2}"
 }
 FEDORA_VERSION="$(cat /usr/lib/os-release | grep '^VERSION_ID=' | head -1 | sed 's,^VERSION_ID=,,')"
-BASE_IMAGE="$(get_json_string '.base-image' 'metadata.json')"
+BASE_IMAGE="$(get_json_string '."base-image"' 'metadata.json')"
 YAFTI_ENABLED="$(get_json_string '.firstboot.yafti' 'firstboot.json')"
 FIRSTBOOT_DATA="/usr/share/ublue-os/firstboot"
 FIRSTBOOT_LINK="/usr/etc/profile.d/ublue-firstboot.sh"

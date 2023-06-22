@@ -1,12 +1,14 @@
 #!/bin/bash
 VERBOSITY="${VERBOSITY:-0}"
-SUDO_PROGRAM="${SUDO_PROGRAM:-sudo}"
+SUDO_PROGRAM="${SUDO_PROGRAM:-pkexec}"
 USER_WARNING="${USER_WARNING:-1}"
 [ "$VERBOSITY" = "1" ] && set -x
 set -uo pipefail
 
 function log {
-	echo "[${1^^}]" $@ >&2
+	LOG_LEVEL=${1}
+	shift
+	echo "[${LOG_LEVEL^^}]" $@ >&2
 }
 
 if [ "$EUID" = 0 ] ; then

@@ -1,3 +1,3 @@
 #!/bin/sh
-echo -e "[device]\nwifi.scan-rand-mac-address=no" | tee -a /etc/NetworkManager/NetworkManager.conf
-echo "wifi.scan-rand-mac-address=no" | tee -a /etc/NetworkManager/NetworkManager.conf
+set -oue pipefail
+echo -e "[device]\nwifi.scan-rand-mac-address=no\nwifi.backend=iwd" | tee -a /etc/NetworkManager/NetworkManager.conf
