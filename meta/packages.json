@@ -12,6 +12,7 @@
     "cockpit",
     "cockpit-podman",
     "tailscale",
+    "fail2ban",
     "gnome-tweaks",
     "gnome-kiosk",
     "gnome-kiosk-script-session",
