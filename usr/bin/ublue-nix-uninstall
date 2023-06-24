@@ -69,8 +69,8 @@ done
 
 log TASK 'Removing nix systemd services'
 "$SUDO_PROGRAM" systemctl disable --now nix-daemon.service nix-daemon.socket nix.mount mkdir-rootfs@.service
-"$SUDO_PROGRAM" systemctl daemon-reload
 "$SUDO_PROGRAM" rm -rf '/etc/systemd/system/mkdir-rootfs@.service' '/etc/systemd/system/nix.mount' /etc/systemd/system/nix-daemon.{service,socket} '/etc/systemd/system/nix-daemon.service.d/'
+"$SUDO_PROGRAM" systemctl daemon-reload
 
 log TASK 'Removing remaining nix system configuration'
 "$SUDO_PROGRAM" rm -rf '/etc/profile.d/nix-app-icons.sh' '/etc/nix' '/etc/profile.d/nix.sh' '/etc/tmpfiles.d/nix-daemon.conf' ~root/.nix-channels ~root/.nix-defexpr ~root/.nix-profile
