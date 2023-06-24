@@ -50,8 +50,8 @@ screens:
       show_terminal: true
       package_manager: yafti.plugin.flatpak
       package_manager_defaults:
-        user: false
-        system: true
+        user: true
+        system: false
       groups:
         GNOME Apps:
           description: Core system applications for the GNOME desktop environment.
@@ -83,6 +83,9 @@ screens:
             - Lollypop: org.gnome.Lollypop
             - GFeeds: org.gabmus.gfeeds
             - Logs: org.gnome.Logs
+            - Gradience: com.github.GradienceTeam.Gradience
+            - Solanum: org.gnome.Solanum
+            - Podcasts: org.gnome.Podcasts
         KDE and QT Apps:
           description: Some KDE apps
           default: false
@@ -104,15 +107,14 @@ screens:
           description: System applications for all desktop environments.
           default: true
           packages:
-            - Deja Dup Backups: org.gnome.DejaDup
             - Fedora Media Writer: org.fedoraproject.MediaWriter
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
-            - Font Downloader: org.gustavoperedo.FontDownloader
-            - Mozilla Firefox: org.mozilla.firefox
             - Bitwarden: com.bitwarden.desktop
             - Cockpit Client: org.cockpit_project.CockpitClient
             - EasyEffects: com.github.wwmm.easyeffects
-            - Helvum: org.pipewire.Helvum 
+            - Helvum: org.pipewire.Helvum
+            - Obsidian: md.obsidian.Obsidian
+            - Firmware Manager: org.gnome.Firmware
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
           default: false

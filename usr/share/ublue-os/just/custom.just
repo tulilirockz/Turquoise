@@ -1,15 +1,6 @@
 skel-to-home:
   rsync -avh /etc/skel "$HOME"
 
-setup-flatpaks:
-  #!/usr/bin/env bash
-  echo 'Installing flatpaks from the ublue recipe ...'
-  flatpaks=$(yq -- '.firstboot.flatpaks[]' "/usr/share/ublue-os/recipe.yml")
-  for pkg in $flatpaks; do \
-      echo "Installing: ${pkg}" && \
-      flatpak install --user --noninteractive flathub $pkg; \
-  done
-
 setup-gaming:
   echo 'Setting up gaming experience ... lock and load.'
   distrobox create -i ghcr.io/ublue-os/bazzite-arch gamebox
@@ -36,11 +27,13 @@ emudeck:
   chmod +x "$HOME/Desktop/emudeck.desktop"
   kioclient exec "$HOME/Desktop/emudeck.desktop"
 
-deckyloader:
-  curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_release.sh | sh
+nix-devbox:
+  ublue-nix-install
+  rm /etc/profile.d/nix-app-icons.sh
+  echo 'Installing devbox!'
+  curl -fsSL https://get.jetpack.io/devbox | bash
 
-cool-packages-for-gamebox:
-    distrobox enter gamebox -- pacman -S gamemode gamescope fuse2
-
-steam-autostart:
-  cp /usr/share/ublue-os/turquoise/com.valvesoftware.Steam.desktop ~/.config/autostart/
+nix-devbox-global:
+  echo 'Installing devbox global profile.'
+  devbox global pull https://devbox.getfleek.dev/low
+  devbox global run install-bash-hook
