@@ -9,6 +9,7 @@
     "libadwaita",
     "waydroid",
     "tmux",
+    "podman-docker",
     "cockpit",
     "cockpit-podman",
     "tailscale",
