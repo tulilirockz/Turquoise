@@ -103,7 +103,8 @@ log info "Enabling mount and resetting SELinux context"
 
 {
   systemctl daemon-reload 
-  systemctl enable --now nix.mount 
+  systemctl enable nix.mount 
+  systemctl start nix.mount
   restorecon -RF /nix
 } |& tee /dev/stderr | systemd-cat -t "$SYSTEMD_APP_NAME"
 
@@ -133,7 +134,8 @@ set +e
   cp -f /nix/var/nix/profiles/default/lib/systemd/system/nix-daemon.{service,socket} /etc/systemd/system/ 
   restorecon -RF /nix 
   systemctl daemon-reload 
-  systemctl enable --now nix-daemon.socket
+  systemctl enable nix-daemon.socket
+  systemctl start nix-daemon.socket
 } |& systemd-cat -t "${SYSTEMD_APP_NAME}"
 set -e
 
