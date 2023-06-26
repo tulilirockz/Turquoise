@@ -12,6 +12,8 @@
     "podman-docker",
     "cockpit",
     "cockpit-podman",
+    "cockpit-navigator",
+    "cockpit-file-sharing",
     "tailscale",
     "fail2ban",
     "gnome-tweaks",
