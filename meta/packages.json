@@ -1,13 +1,18 @@
 {
   "yafti": true,
   "remove": [
-    "wpa_supplicant"
+    "wpa_supplicant",
+    "gnome-terminal",
+    "gnome-terminal-nautilus",
+    "htop",
+    "firefox",
+    "firefox-langpacks",
+    "nvtop"
   ],
   "install": [
     "iwd",
     "python3-pip",
     "libadwaita",
-    "waydroid",
     "tmux",
     "podman-docker",
     "cockpit",
@@ -15,11 +20,14 @@
     "cockpit-navigator",
     "cockpit-file-sharing",
     "tailscale",
-    "fail2ban",
     "gnome-tweaks",
     "gnome-kiosk",
     "gnome-kiosk-script-session",
     "gnome-shell-extension-caffeine",
-    "gnome-shell-extension-appindicator"
+    "gnome-shell-extension-appindicator",
+    "gnome-shell-extension-blur-my-shell",
+    "gnome-console",
+    "gnome-shell-extension-dash-to-dock",
+    "yaru-theme"
   ]
 }

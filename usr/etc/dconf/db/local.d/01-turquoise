@@ -1,0 +1,74 @@
+[org/gnome/desktop/interface]
+enable-hot-corners=false
+clock-show-weekday=true
+cursor-theme="Yaru"
+icon-theme="Yaru"
+gtk-theme="Yaru"
+font-antialiasing="rgba"
+font-name="Ubuntu 12"
+document-font-name="Ubuntu 12"
+monospace-font-name="Ubuntu Mono 18"
+
+[org/gnome/desktop/sound]
+allow-volume-above-100-percent=true
+theme-name="Yaru"
+
+[org/gnome/desktop/wm/preferences]
+button-layout=":minimize,maximize,close"
+num-workspaces='4'
+title-bar-font="Ubuntu Bold 12"
+
+[org/gnome/shell] 
+favorite-apps = ['org.gnome.Nautilus.desktop', 'org.mozilla.Firefox.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Software.desktop']
+enabled-extensions = ['dash-to-dock@micxgx.gmail.com','blur-my-shell@aunetx']
+
+[org/gnome/desktop/background]
+picture-uri='file:///usr/share/backgrounds/vanilla/vanilla-dark.svg'
+picture-uri-dark='file:///usr/share/backgrounds/vanilla/vanilla-dark.svg'
+
+[org/gnome/desktop/wm/preferences]
+title-bar-font="Ubuntu 11"
+
+[org/gnome/desktop/peripherals/touchpad]
+tap-to-click=true
+
+[org/gnome/shell/extensions/dash-to-dock]
+animation-time=0.15
+background-color='rgb(40,40,40)'
+background-opacity=0.8
+click-action='focus-minimize-or-previews'
+custom-background-color=true
+customize-alphas=true
+dash-max-icon-size=64
+dock-fixed=false
+hide-delay=0.5
+intellihide-mode='ALL_WINDOWS'
+max-alpha=0.8
+min-alpha=0.5
+show-icons-notifications-counter=false
+show-mounts=false
+show-trash=false
+transparency-mode='DYNAMIC'
+
+[org/gtk/gtk4/settings/file-chooser]
+sort-directories-first=true
+
+[org/gnome/shell/extensions/panel-corners]
+panel-corners=true
+scren-corner-radius=8
+screen-corners=true
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>t'
+command='kgx'
+name='Launch Console'
+
+[com/raggesilver/BlackBox]
+command-as-login-shell=true
+use-custom-command=true
+custom-shell-command='distrobox enter ubuntu'
+theme-dark="Yaru"
+style-preference=2
+font="Ubuntu Mono 16"
+window-width=975
+window-height=650
