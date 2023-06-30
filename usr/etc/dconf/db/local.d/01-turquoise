@@ -1,5 +1,5 @@
 [org/gnome/desktop/interface]
-enable-hot-corners=false
+enable-hot-corners=true
 clock-show-weekday=true
 cursor-theme="Yaru"
 icon-theme="Yaru"
