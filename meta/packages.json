@@ -1,5 +1,4 @@
 {
-  "yafti": true,
   "remove": [
     "wpa_supplicant",
     "gnome-terminal",
