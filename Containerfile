@@ -13,7 +13,7 @@ COPY --from=ghcr.io/ublue-os/bling:latest /files/usr/etc/profile.d/nix-*.sh /usr
 COPY ${META_FOLDER} /usr/share/ublue-os/meta
 COPY scripts /tmp/scripts
 
-RUN rpm-ostree install /tmp/ublue-os-wallpaper.rpm && \
+RUN rpm-ostree install /tmp/ublue-os-wallpapers.rpm && \
         cp -r /usr/etc/yum.repos.d /etc && \
         chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
