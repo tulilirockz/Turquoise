@@ -2,5 +2,6 @@
   "name": "turquoise",
   "base-image": "ghcr.io/ublue-os/silverblue-main",
   "fedora-version": 38,
-  "description": "A custom Silverblue image for my family's and my usage"
+  "description": "A custom Silverblue image for my family's and my usage",
+  "yafti": true
 }
