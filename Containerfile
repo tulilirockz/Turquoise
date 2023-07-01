@@ -9,7 +9,6 @@ COPY --from=ghcr.io/ublue-os/bling:latest /rpms/ublue-os-wallpapers-*.noarch.rpm
 COPY --from=ghcr.io/ublue-os/bling:latest /files/usr/share/ublue-os/just /usr/share/ublue-os/just
 COPY --from=ghcr.io/ublue-os/bling:latest /files/usr/bin/ublue-nix* /usr/bin
 COPY --from=ghcr.io/ublue-os/bling:latest /files/usr/share/fonts /usr/share/fonts
-COPY --from=ghcr.io/ublue-os/bling:latest /files/usr/etc/profile.d/nix-*.sh /usr/etc/profile.d
 COPY ${META_FOLDER} /usr/share/ublue-os/meta
 COPY scripts /tmp/scripts
 
