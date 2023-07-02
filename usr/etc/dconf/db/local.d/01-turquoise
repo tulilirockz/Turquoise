@@ -15,10 +15,10 @@ color-scheme="prefer-dark"
 allow-volume-above-100-percent=true
 theme-name="Yaru"
 
-[/org/gnome/desktop/peripherals/mouse]
+[org/gnome/desktop/peripherals/mouse]
 accel-profile="flat"
 
-[/org/gnome/mutter]
+[org/gnome/mutter]
 center-new-windows=true
 
 [org/gnome/desktop/wm/preferences]
@@ -72,27 +72,27 @@ binding='<Super>t'
 command='kgx'
 name='Launch Console'
 
-[/org/gnome/shell/extensions/blur-my-shell/panel]
+[org/gnome/shell/extensions/blur-my-shell/panel]
 blur=false
 
-[/org/gnome/desktop/privacy]
+[org/gnome/desktop/privacy]
 remember-recent-files=false
 remove-old-trash-files=true
 remove-old-temp-files=true
 
-[/org/gnome/settings-daemon/plugins/power]
+[org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-timeout=3600
 
-[/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 name='Launch Console'
 command='kgx'
 binding='<Super>t'
 
-[/org/gnome/desktop/media-handling]
+[org/gnome/desktop/media-handling]
 autorun-never=true
 
-[/org/gnome/nautilus/preferences]
+[org/gnome/nautilus/preferences]
 search-filter-time-type='last_modified'
 
-[/org/gnome/nautilus/list-view]
+[org/gnome/nautilus/list-view]
 use-tree-view=true
