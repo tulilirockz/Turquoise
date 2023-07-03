@@ -66,8 +66,6 @@ screens:
             - Document Viewer: org.gnome.Evince
             - Extension Manager: com.mattjakeman.ExtensionManager
             - Image Viewer: org.gnome.Loupe
-            - Logs: org.gnome.Logs
-            - Maps: org.gnome.Maps
             - Photos (Organizer): org.gnome.Photos
             - Sushi (Nautilus Previewer): org.gnome.NautilusPreviewer
             - Text Editor: org.gnome.TextEditor
@@ -76,10 +74,7 @@ screens:
             - TubeConverter: org.nickvision.tubeconverter
             - Authenticator: com.belmoussaoui.Authenticator
             - Seahorse: org.gnome.seahorse.Application
-            - RhythmBox: org.gnome.Rhythmbox3
-            - Secrets: org.gnome.World.Secrets
             - Shotwell: org.gnome.Shotwell
-            - Web: org.gnome.Epiphany
             - Lollypop: org.gnome.Lollypop
             - GFeeds: org.gabmus.gfeeds
             - Logs: org.gnome.Logs
@@ -119,6 +114,8 @@ screens:
           description: Additional browsers to complement or replace Firefox.
           default: false
           packages:
+            - Firefox: org.mozilla.firefox
+            - Librewolf: io.gitlab.librewolf-community
             - Chromium: org.chromium.Chromium
             - Brave: com.brave.Browser
             - Google Chrome: com.google.Chrome
