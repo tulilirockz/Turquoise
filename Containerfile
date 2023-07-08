@@ -17,6 +17,5 @@ RUN rpm-ostree install /tmp/ublue-update.rpm /tmp/ublue-os-wallpapers.rpm && \
         cp -r /usr/etc/yum.repos.d /etc && \
         chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
-        systemctl enable ublue-update && \
         rm -rf /tmp/* /var/* && \
         ostree container commit
