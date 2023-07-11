@@ -1,9 +1,9 @@
 [org/gnome/desktop/interface]
 enable-hot-corners=true
 clock-show-weekday=true
-cursor-theme="Yaru"
-icon-theme="Yaru"
-gtk-theme="Yaru"
+cursor-theme="Adwaita"
+icon-theme="Adwaita"
+gtk-theme="adw-gtk3"
 font-antialiasing="rgba"
 font-name="Cantarell 12"
 font-hinting="full"
@@ -13,7 +13,7 @@ color-scheme="prefer-dark"
 
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=true
-theme-name="Yaru"
+theme-name="Adwaita"
 
 [org/gnome/desktop/peripherals/mouse]
 accel-profile="flat"
@@ -27,8 +27,8 @@ num-workspaces='4'
 title-bar-font="Cantarell Bold 12"
 
 [org/gnome/shell] 
-favorite-apps = ['org.gnome.Nautilus.desktop', 'org.mozilla.Firefox.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Software.desktop']
-enabled-extensions = ['dash-to-dock@micxgx.gmail.com','blur-my-shell@aunetx']
+favorite-apps = ['org.gnome.Nautilus.desktop', 'org.gnome.Console.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Software.desktop']
+enabled-extensions = ['dash-to-dock@micxgx.gmail.com','blur-my-shell@aunetx','appindicatorsupport@rgcjonas.gmail.com']
 
 [org/gnome/desktop/background]
 picture-uri='file:///usr/share/backgrounds/ublue-os/3D-1/3D-1-pink.png'
