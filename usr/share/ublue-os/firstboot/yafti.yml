@@ -53,8 +53,8 @@ screens:
         user: true
         system: false
       groups:
-        GNOME Apps:
-          description: Core system applications for the GNOME desktop environment.
+        System GNOME Apps:
+          description: Core system applications for GNOME
           default: true
           packages:
             - Calculator: org.gnome.Calculator
@@ -66,29 +66,32 @@ screens:
             - Document Viewer: org.gnome.Evince
             - Extension Manager: com.mattjakeman.ExtensionManager
             - Image Viewer: org.gnome.Loupe
-            - Photos (Organizer): org.gnome.Photos
             - Sushi (Nautilus Previewer): org.gnome.NautilusPreviewer
             - Text Editor: org.gnome.TextEditor
             - Celluloid: io.github.celluloid_player.Celluloid
             - Weather: org.gnome.Weather
+            - GFeeds: org.gabmus.gfeeds
+            - Logs: org.gnome.Logs
+        GNOME Extras:
+          description: Extra GNOME applications
+          default: false
+          packages:
+            - Photos (Organizer): org.gnome.Photos
             - TubeConverter: org.nickvision.tubeconverter
             - Authenticator: com.belmoussaoui.Authenticator
             - Seahorse: org.gnome.seahorse.Application
             - Shotwell: org.gnome.Shotwell
             - Lollypop: org.gnome.Lollypop
-            - GFeeds: org.gabmus.gfeeds
-            - Logs: org.gnome.Logs
             - Gradience: com.github.GradienceTeam.Gradience
             - Solanum: org.gnome.Solanum
             - Podcasts: org.gnome.Podcasts
-        KDE and QT Apps:
-          description: Some KDE apps
+        System KDE Apps:
+          description: Core system applications for KDE
           default: false
           packages:
             - Alligator: org.kde.alligator
             - Kasts: org.kde.kasts
             - Kdenlive: org.kde.kdenlive
-            - Kleopatra: org.kde.kleopatra
             - Krita: org.kde.krita
             - Neochat: org.kde.neochat
             - Okular: org.kde.okular
@@ -108,7 +111,6 @@ screens:
             - Cockpit Client: org.cockpit_project.CockpitClient
             - EasyEffects: com.github.wwmm.easyeffects
             - Helvum: org.pipewire.Helvum
-            - Obsidian: md.obsidian.Obsidian
             - Firmware Manager: org.gnome.Firmware
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
@@ -117,6 +119,7 @@ screens:
             - Firefox: org.mozilla.firefox
             - Librewolf: io.gitlab.librewolf-community
             - Chromium: org.chromium.Chromium
+            - Ungoogled Chromium: com.github.Eloston.UngoogledChromium
             - Brave: com.brave.Browser
             - Google Chrome: com.google.Chrome
             - Microsoft Edge: com.microsoft.Edge
@@ -151,7 +154,9 @@ screens:
             - Thunderbird Email: org.mozilla.Thunderbird
             - Evolution: org.gnome.Evolution
             - GhostWriter: io.github.wereturtle.ghostwriter
-            - Apostrophe: org.gnome.gitlab.somas.Apostrophe 
+            - Apostrophe: org.gnome.gitlab.somas.Apostrophe
+            - Obsidian: md.obsidian.Obsidian
+            - Logseq: com.logseq.Logseq
         Making Content:
           description: Make content for the Internet.
           default: false
